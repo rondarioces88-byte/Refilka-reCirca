@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City-wide Impact Dashboard — refillka × Taguig</title>
+  <meta name="description" content="Live, city-wide refilling impact for the refillka × Taguig Monitored Field Study: verified pilot actuals, 6-month projections, channel breakdown, an impact calculator, the interactive Philippines impact map, and SDG alignment.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="accent-bar"></div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="brand" aria-label="refillka home">
+        <span class="wordmark"><span class="re">re</span><span class="fill">fill</span><span class="ka">ka</span></span>
+        <span class="by">by ReCirca × Taguig</span>
+      </a>
+      <nav class="tabs" aria-label="Primary">
+        <a href="dashboard.html"   class="tab active" data-tab="dashboard" aria-current="page"><span class="dot"></span>Dashboard</a>
+        <a href="individuals.html" class="tab" data-tab="individuals"><span class="dot"></span>Individuals</a>
+        <a href="enterprise.html"  class="tab" data-tab="enterprise"><span class="dot"></span>Enterprise</a>
+        <a href="pilot.html"       class="tab" data-tab="pilot"><span class="dot"></span>Pilot</a>
+        <a href="partners.html"    class="tab" data-tab="partners"><span class="dot"></span>Partners</a>
+      </nav>
+      <span class="pilot-badge"><span class="live"></span>Taguig Pilot · Live</span>
+    </div>
+  </header>
+
+  <div class="context-strip">
+    <div class="wrap">
+      <strong>Monitored Field Study</strong>
+      <span class="sep"></span><span>City of Taguig</span>
+      <span class="sep"></span><span class="muted">6-month study · Aug 2026 – Feb 2027</span>
+      <span class="sep"></span><span class="muted">Dashboard updates daily · live database integration in progress</span>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <h1 data-reveal>City-wide <span class="accent">impact</span> dashboard</h1>
+            <p class="lead" data-reveal data-reveal-delay="100">Every refill recorded across Taguig's sari-sari stores, institutions and households — translated into sachets avoided, plastic prevented and carbon reduced. Verified pilot data today; a full database-backed live feed as the Monitored Field Study scales.</p>
+            <div class="tags" data-reveal data-reveal-delay="180">
+              <span class="tag">♻️ Sachet avoidance</span>
+              <span class="tag">🌊 Plastic diverted</span>
+              <span class="tag">🌍 CO₂e reduced</span>
+              <span class="tag">📈 ESG / EPR-ready</span>
+            </div>
+          </div>
+          <div class="counter-card" data-reveal data-reveal-delay="120">
+            <div class="kicker"><span class="live"></span> Verified pilot impact</div>
+            <div class="big serif" data-count="28821">28,821</div>
+            <div class="unit">single-use sachets avoided · as of May 2026</div>
+            <div class="sub">
+              <div><b data-count="15">15</b><span>live sari-sari stores</span></div>
+              <div><b data-count="4">4</b><span>barangays</span></div>
+            </div>
+            <div class="challenge">
+              <div class="row"><span>The 1 Billion Challenge</span><span>goal by 2030</span></div>
+              <div class="bar"><div class="fill" data-pct="4.63"></div></div>
+              <div class="row" style="margin-top:7px"><span>6-month study projection</span><span>up to ≈4.6% of 1B</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE TICKER -->
+    <section class="block tight">
+      <div class="wrap">
+        <div class="eyebrow"><span class="num">01</span><span class="label">Live feed</span><span class="line"></span></div>
+        <div data-live-ticker data-reveal></div>
+      </div>
+    </section>
+
+    <!-- IMPACT MAP -->
+    <section class="block">
+      <div class="wrap">
+        <div class="eyebrow"><span class="num">02</span><span class="label">Where the impact is</span><span class="line"></span></div>
+        <h2 class="sec-title">From Taguig to the whole archipelago.</h2>
+        <p class="sec-sub mb-24">The verified pilot runs in Taguig, inside a confirmed network of <strong>2,495 store partners across 14 cities</strong> (early 2026). The nationwide markers show the 2030 "RefillKa Everywhere" goal — explore both.</p>
+        <div class="map-grid">
+          <div class="map-card" data-reveal>
+            <div class="mc-head"><h3>National impact map</h3><p>Hover or tap a marker — verified pilot vs 2030 vision</p></div>
+            <figure class="nat-fig">
+              <div class="nat-img" data-ph-map>
+                <img src="assets/PH_Map.png" alt="Map of the Philippines showing the Taguig pilot and nationwide RefillKa Everywhere vision markers">
+              </div>
+            </figure>
+            <div class="map-legend">
+              <span class="lg"><i style="background:var(--green)"></i> Verified pilot (Taguig)</span>
+              <span class="lg"><i style="border:2px solid var(--green); background:transparent"></i> 2030 vision reach</span>
+            </div>
+            <p class="nat-credit">National outline map © Vemaps.com</p>
+          </div>
+          <div class="map-card" data-reveal data-reveal-delay="120">
+            <div class="mc-head"><h3>Metro Manila impact board</h3><p>Hover or tap a city for figures &amp; status</p></div>
+            <div class="metro-wrap" data-metro-map></div>
+            <div class="map-legend">
+              <span class="lg"><i style="background:var(--green)"></i> Verified pilot (Taguig)</span>
+              <span class="lg"><i style="background:var(--green); opacity:.5"></i> Metro Manila network city</span>
+            </div>
+            <p class="map-foot">Network: <b>2,495</b> stores · <b>14</b> cities (confirmed early 2026) · Taguig alone has <b>23,000</b> registered sari-sari stores.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILOT ACTUALS -->
+    <section class="block tight">
+      <div class="wrap">
+        <div class="eyebrow"><span class="num">03</span><span class="label">Verified pilot actuals</span><span class="line"></span></div>
+        <h2 class="sec-title mb-24">What's already been proven (as of May 2026).</h2>
+        <div class="stat-grid cols-4">
+          <div class="card metric accent-green" data-reveal><div class="val serif" data-count="19927">19,927</div><div class="lbl">Sachets avoided — 15 sari-sari stores</div><div class="note">since Mar 27, 2026 · 4 barangays · in 2 months</div></div>
+          <div class="card metric accent-blue" data-reveal><div class="val serif" data-count="8894">8,894</div><div class="lbl">Sachets avoided — City Hall booth</div><div class="note">since May 18, 2026 · in first 3 weeks</div></div>
+          <div class="card metric accent-green" data-reveal><div class="val serif" data-count="28821">28,821</div><div class="lbl">Total pre-simulation sachets avoided</div><div class="note">combined, verified pilot impact</div></div>
+          <div class="card metric accent-teal" data-reveal><div class="val serif" data-count="200" data-suffix="+">200+</div><div class="lbl">Founding buyers at the booth</div><div class="note">employees who bought since May 18</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTIONS + SCENARIO -->
+    <section class="block" style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+      <div class="wrap">
+        <div class="eyebrow"><span class="num">04</span><span class="label">6-month study projections</span><span class="line"></span></div>
+        <div class="scenario-head">
+          <div>
+            <h2 class="sec-title">Projected impact at scale.</h2>
+            <p class="sec-sub">Switch the deployment scenario — every figure below updates between the minimum and full ARP rollout across Taguig's 38 barangays.</p>
+          </div>
+          <div class="scenario" role="group" aria-label="Deployment scenario">
+            <button data-scenario="500" class="active">500 ARPs · minimum</button>
+            <button data-scenario="2300">2,300 ARPs · full</button>
+          </div>
+        </div>
+        <div class="stat-grid cols-4 mb-24">
+          <div class="card metric accent-green" data-reveal><div class="val serif" data-scn data-v500="12,342,328" data-v2300="46,303,400">12,342,328</div><div class="lbl">Total sachets avoided (6 mo)</div></div>
+          <div class="card metric accent-blue" data-reveal><div class="val serif" data-scn data-v500="92.57" data-v2300="347.3">92.57</div><div class="lbl">Metric tons of plastic diverted</div><div class="note">est. 1.5 g per sachet</div></div>
+          <div class="card metric accent-teal" data-reveal><div class="val serif" data-scn data-v500="500" data-v2300="2,300">500</div><div class="lbl">Authorized Refilling Partners (stores)</div></div>
+          <div class="card metric accent-green" data-reveal><div class="val serif" data-scn data-v500="13" data-v2300="60">13</div><div class="lbl">Stores per barangay (avg of 38)</div></div>
+        </div>
+        <div class="table-wrap" data-reveal>
+          <table>
+            <thead><tr><th>Channel</th><th class="num">Sachets avoided (6 mo)</th><th>Scale</th></tr></thead>
+            <tbody>
+              <tr><td><span class="pill green">Hub &amp; Spoke</span> Sari-sari stores (ARPs)</td><td class="num" data-scn data-v500="3,274,572" data-v2300="15,069,600">3,274,572</td><td>500–2,300 stores · 38 barangays</td></tr>
+              <tr><td><span class="pill blue">Institutional</span> Offices, gov't, schools</td><td class="num">8,704,800</td><td>100 clients</td></tr>
+              <tr><td><span class="pill red">Direct-to-Consumer</span> Households</td><td class="num">362,956</td><td>100 households</td></tr>
+              <tr style="font-weight:700; background:#fbfcfb;"><td>Total sachets avoided</td><td class="num" data-scn data-v500="12,342,328" data-v2300="46,303,400">12,342,328</td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="stat-grid cols-2 mt-16">
+          <div class="card metric" data-reveal><div class="val serif" data-scn data-v500="18,513.49" data-v2300="69,455.10">18,513.49</div><div class="lbl">Kilograms of plastic prevented</div><div class="note">at est. 1.5 g per multilayer sachet</div></div>
+          <div class="card metric accent-green" data-reveal><div class="val serif"><span data-scn data-v500="₱277,710 – ₱462,850" data-v2300="₱1,041,900 – ₱1,736,500">₱277,710 – ₱462,850</span></div><div class="lbl">Estimated waste-hauling savings to the city (6 mo)</div><div class="note">at ₱3,000–5,000 per metric ton</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHANNELS -->
+    <section class="block">
+      <div class="wrap">
+        <div class="eyebrow"><span class="num">05</span><span class="label">The three channels</span><span class="line"></span></div>
+        <h2 class="sec-title mb-24">One network, three ways to refill.</h2>
+        <div class="stat-grid cols-3">
+          <div class="card chan hub lift" data-reveal>
+            <div class="tagline">Channel 1 · Hub &amp; Spoke</div>
+            <h3>Sari-sari stores (ARPs)</h3>
+            <p class="desc">Authorized Refilling Partners — the primary, most validated channel. Each store gets a ₱4,950 Starter Kit, recoverable in 3 months.</p>
+            <div class="kv">
+              <div><span>Sachets / store / month</span><b>1,092</b></div>
+              <div><span>Monthly volume / store</span><b>17.5 gal</b></div>
+              <div><span>Scale</span><b>500–2,300</b></div>
+            </div>
+          </div>
+          <div class="card chan inst lift" data-reveal data-reveal-delay="90">
+            <div class="tagline">Channel 2 · Institutional</div>
+            <h3>Offices, gov't, schools</h3>
+            <p class="desc">Bulk cleaning and personal-care for organized buyers. Taguig City Government is the first institutional partner.</p>
+            <div class="kv">
+              <div><span>Sachets / client / month</span><b>14,508</b></div>
+              <div><span>Monthly volume / client</span><b>72 gal</b></div>
+              <div><span>6-mo total (100 clients)</span><b>8,704,800</b></div>
+            </div>
+          </div>
+          <div class="card chan dtc lift" data-reveal data-reveal-delay="180">
+            <div class="tagline">Channel 3 · Direct-to-Consumer</div>
+            <h3>Households</h3>
+            <p class="desc">Refillable container sets sold directly to families — saving an estimated ₱1,080 per household each month.</p>
+            <div class="kv">
+              <div><span>Sachets / household / month</span><b>606</b></div>
+              <div><span>Monthly volume / household</span><b>3.5 gal</b></div>
+              <div><span>6-mo total (100 households)</span><b>362,956</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="block" style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+      <div class="wrap">
+        <div class="eyebrow"><span class="num">06</span><span class="label">Impact calculator</span><span class="line"></span></div>
+        <h2 class="sec-title">Translate any refill into avoided impact.</h2>
+        <p class="sec-sub mb-24">Uses the study's published methodology (PRD Equation A &amp; B): volume → sachets avoided → plastic mass → CO₂e. Try a quantity.</p>
+        <div class="calc" data-reveal>
+          <div class="controls">
+            <div class="field">
+              <label for="calc-product">Product category</label>
+              <select id="calc-product">
+                <option value="household">Household cleaning — sachet 18.5 mL (input in gallons)</option>
+                <option value="condiments">Soy sauce / vinegar — sachet 20 mL (input in liters)</option>
+                <option value="oil">Cooking oil — sachet 250 mL (input in liters)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="calc-qty">Quantity refilled (<span id="calc-unit">gallons</span>)</label>
+              <input id="calc-qty" type="number" min="0" step="0.5" value="5" inputmode="decimal">
+            </div>
+            <button class="btn" id="calc-go" type="button">Calculate impact</button>
+          </div>
+          <div class="calc-out">
+            <div class="o"><b id="out-sachets">—</b><span>single-use sachets avoided</span></div>
+            <div class="o blue"><b id="out-plastic">—</b><span>kg plastic prevented</span></div>
+            <div class="o teal"><b id="out-co2">—</b><span>kg CO₂e avoided</span></div>
+          </div>
+          <p class="equiv" id="calc-equiv"></p>
+        </div>
+        <p class="src">Conversions per PRD product mapping: household 1 gal = 3,785.41 mL, sachet 18.5 mL, 1.5 g; soy/vinegar 1 L = 1,000 mL, sachet 20 mL, 1.2 g; cooking oil 1 L, sachet 250 mL, 4.5 g. Emission factor 6.0 kg CO₂e/kg plastic.</p>
+      </div>
+    </section>
+
+    <!-- SDG -->
+    <section class="block">
+      <div class="wrap">
+        <div class="eyebrow"><span class="num">07</span><span class="label">SDG alignment</span><span class="line"></span></div>
+        <h2 class="sec-title mb-24">Mapped to the UN Sustainable Development Goals.</h2>
+        <div class="sdg-grid">
+          <div class="sdg" style="background:#BF8B2E" data-reveal><div><span class="n">SDG 12</span><h4>Responsible Consumption &amp; Production</h4></div><div class="hl">28,821<small>sachets avoided (pilot)</small></div></div>
+          <div class="sdg" style="background:#0A97D9" data-reveal data-reveal-delay="60"><div><span class="n">SDG 14</span><h4>Life Below Water</h4></div><div class="hl">92.57–347.3<small>MT plastic diverted (6-mo proj.)</small></div></div>
+          <div class="sdg" style="background:#3F7E44" data-reveal data-reveal-delay="120"><div><span class="n">SDG 13</span><h4>Climate Action</h4></div><div class="hl">6.0<small>kg CO₂e avoided / kg plastic</small></div></div>
+          <div class="sdg" style="background:#FD9D24" data-reveal data-reveal-delay="60"><div><span class="n">SDG 11</span><h4>Sustainable Cities &amp; Communities</h4></div><div class="hl">38<small>Taguig barangays in scope</small></div></div>
+          <div class="sdg" style="background:#A21942" data-reveal data-reveal-delay="120"><div><span class="n">SDG 8</span><h4>Decent Work &amp; Economic Growth</h4></div><div class="hl">1,000+<small>CENRO livelihoods re-skilled</small></div></div>
+          <div class="sdg" style="background:#19486A" data-reveal data-reveal-delay="180"><div><span class="n">SDG 17</span><h4>Partnerships for the Goals</h4></div><div class="hl">6<small>anchor partners aligned</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE TEASER -->
+    <section class="block tight">
+      <div class="wrap">
+        <div class="save-band" data-reveal>
+          <div class="num">6<small>month field study</small></div>
+          <ul>
+            <li>Pre-simulation pilot proved the model: <strong>28,821 sachets</strong> avoided across 15 stores and the City Hall booth.</li>
+            <li>Official launch <strong>July 1, 2026</strong> (Plastic-Free Month) scales to 500–2,300 stores plus institutional &amp; household channels.</li>
+            <li>Culminates in the Philippines' first <strong>National Refilling Standards</strong> submission.</li>
+          </ul>
+          <a href="pilot.html" class="btn lg solid-green" style="white-space:nowrap">See the full timeline →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="word"><span class="re">re</span><span class="fill">fill</span><span class="ka">ka</span></div>
+          <p class="src-note">refillka is ReCirca Management Corp's circular-infrastructure platform —
+          replacing single-use sachets with bulk refilling, in partnership with the City Government of
+          Taguig, NutriAsia, and the Plastic Reboot Program (GEF-UNIDO-DENR).</p>
+          <p class="src-note"><strong>The 1 Billion Challenge</strong> — prevent 1,000,000,000 single-use
+          plastics per year from entering Philippine waste streams by 2030.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="dashboard.html">City-wide Dashboard</a></li>
+            <li><a href="individuals.html">For Individuals</a></li>
+            <li><a href="enterprise.html">For Enterprise</a></li>
+            <li><a href="pilot.html">Pilot &amp; Methodology</a></li>
+            <li><a href="partners.html">Partners &amp; About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="mailto:collaborate@recircagroup.com">collaborate@recircagroup.com</a></li>
+            <li><a href="https://www.recircagroup.com" target="_blank" rel="noopener">www.recircagroup.com</a></li>
+            <li>ReCirca Management Corp</li>
+            <li>Ces Rondario — Founder &amp; CEO</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 ReCirca Management Corp. refillka × City Government of Taguig.</span>
+        <span>Figures from the refillka Taguig Monitored Field Study proposal &amp; pilot data (2026).</span>
+      </div>
+    </div>
+  </footer>
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

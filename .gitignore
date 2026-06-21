@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+.netlify/
+*.log
+Thumbs.db
+
+# internal build scaffolding (not part of the deliverable site)
+_BRIEF.md

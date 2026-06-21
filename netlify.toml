@@ -1,0 +1,25 @@
+# Netlify configuration — static site, no build step
+[build]
+  publish = "."
+  command = "echo 'Static site — nothing to build'"
+
+# Security + sensible defaults for all routes
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Long-cache immutable static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Pretty 404
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
