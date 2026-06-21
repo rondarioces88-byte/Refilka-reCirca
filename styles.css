@@ -450,6 +450,28 @@ sup.cite { color:var(--green-soft); font-weight:700; font-size:.7em; cursor:help
 .city-node.vision .blip { background:transparent; border:2px solid var(--green); box-shadow:0 0 0 3px rgba(255,255,255,.6); opacity:.7; }
 .city-node.vision .blip::after { content:""; position:absolute; inset:-2px; border-radius:50%; border:1px dashed rgba(93,170,64,.5); }
 
+/* national PH-map markers — high contrast on the dark-green silhouette */
+.nat-img .city-node.lead .blip { background:#fff;
+  box-shadow:0 0 0 4px rgba(240,215,9,.6), 0 0 16px 4px rgba(255,255,255,.45); }
+.nat-img .city-node.lead .blip::after { background:#F0D709; }
+.nat-img .city-node.vision .blip { background:#F0D709; border:2px solid #fffdf0; opacity:1;
+  box-shadow:0 0 0 2px rgba(18,62,41,.28), 0 0 10px 1px rgba(240,215,9,.85); }
+.nat-img .city-node.vision .blip::after { border-color:rgba(255,250,200,.7); }
+.nat-img .cn-name { color:var(--green-deep); background:#fff; padding:2px 9px; border-radius:99px;
+  box-shadow:0 2px 7px rgba(12,44,29,.4); font-weight:700; top:calc(100% + 7px); }
+
+/* map data-viz — sachets-avoided-by-source segmented bar */
+.map-dataviz { padding:2px 22px 16px; }
+.mdv-head { display:flex; justify-content:space-between; align-items:baseline; font-size:.76rem; color:var(--mid); margin-bottom:7px; }
+.mdv-head b { font-family:'Lora',serif; color:var(--green-deep); font-size:1.05rem; }
+.mdv-bar { display:flex; height:13px; border-radius:99px; overflow:hidden; background:#eef0f2; box-shadow:inset 0 1px 2px rgba(0,0,0,.07); }
+.mdv-bar .seg { height:100%; }
+.mdv-bar .seg.a { background:linear-gradient(90deg,var(--green-soft),var(--green)); }
+.mdv-bar .seg.b { background:linear-gradient(90deg,#1f7fb5,var(--blue)); }
+.mdv-legend { display:flex; gap:18px; margin-top:9px; font-size:.74rem; color:var(--mid); flex-wrap:wrap; }
+.mdv-legend i { display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:6px; vertical-align:middle; }
+.mdv-legend i.a { background:var(--green); } .mdv-legend i.b { background:var(--blue); }
+
 /* Metro Manila interactive board */
 .metro-wrap { position:relative; padding:22px; }
 .metro-board { position:relative; width:100%; aspect-ratio:4/3; border-radius:12px;

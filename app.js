@@ -265,28 +265,37 @@
     var paths = window.PH_MAP_PATHS || '';
     mounts.forEach(function (mount) {
       if (paths && !mount.querySelector('.ph-svg')) {
+        var P = function (v) { return [(v.x * 10.24).toFixed(1), (v.y * 10.24).toFixed(1)]; };
+        var lead = markers.filter(function (m) { return m.lead; })[0];
+        var visions = markers.filter(function (m) { return m.kind === 'vision'; });
+        var glow = '', links = '';
+        if (lead) {
+          var L = P(lead);
+          glow = '<circle cx="' + L[0] + '" cy="' + L[1] + '" r="110" fill="url(#phGlow)"/>';
+          links = visions.map(function (v) {
+            var V = P(v);
+            return '<line x1="' + L[0] + '" y1="' + L[1] + '" x2="' + V[0] + '" y2="' + V[1] +
+              '" stroke="#F0D709" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 9" opacity="0.5">' +
+              '<animate attributeName="stroke-dashoffset" from="0" to="-10" dur="0.7s" repeatCount="indefinite"/></line>';
+          }).join('');
+        }
         var wrap = document.createElement('div');
         wrap.innerHTML =
-          '<svg class="ph-svg" viewBox="0 0 1024 1024" role="img" aria-label="Map of the Philippines — refillka pilot in Taguig with nationwide 2030 vision markers">' +
+          '<svg class="ph-svg" viewBox="0 0 1024 1024" role="img" aria-label="Map of the Philippines — refillka pilot in Taguig with nationwide 2030 vision markers and network links">' +
             '<defs>' +
-              '<linearGradient id="phGrad" x1="0" y1="0" x2="0.35" y2="1">' +
-                '<stop offset="0" stop-color="#3a9c63"/><stop offset="0.55" stop-color="#1f6a42"/><stop offset="1" stop-color="#0e3a26"/>' +
-              '</linearGradient>' +
-              '<linearGradient id="phSheen" x1="0" y1="0" x2="1" y2="0.5">' +
-                '<stop offset="0.28" stop-color="#eafff0" stop-opacity="0"/>' +
-                '<stop offset="0.5" stop-color="#f4fff6" stop-opacity="0.55"/>' +
-                '<stop offset="0.72" stop-color="#eafff0" stop-opacity="0"/>' +
-                '<animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="6.5s" repeatCount="indefinite"/>' +
-              '</linearGradient>' +
-              '<pattern id="phDots" width="13" height="13" patternUnits="userSpaceOnUse">' +
-                '<circle cx="2.2" cy="2.2" r="1.1" fill="#ffffff" opacity="0.20"/></pattern>' +
+              '<linearGradient id="phGrad" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#3a9c63"/><stop offset="0.55" stop-color="#1f6a42"/><stop offset="1" stop-color="#0e3a26"/></linearGradient>' +
+              '<linearGradient id="phSheen" x1="0" y1="0" x2="1" y2="0.5"><stop offset="0.28" stop-color="#eafff0" stop-opacity="0"/><stop offset="0.5" stop-color="#f4fff6" stop-opacity="0.55"/><stop offset="0.72" stop-color="#eafff0" stop-opacity="0"/><animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="6.5s" repeatCount="indefinite"/></linearGradient>' +
+              '<radialGradient id="phGlow"><stop offset="0" stop-color="#F0D709" stop-opacity="0.5"/><stop offset="1" stop-color="#F0D709" stop-opacity="0"/></radialGradient>' +
+              '<pattern id="phDots" width="13" height="13" patternUnits="userSpaceOnUse"><circle cx="2.2" cy="2.2" r="1.1" fill="#ffffff" opacity="0.20"/></pattern>' +
               '<g id="phLand" transform="translate(0,1024) scale(0.1,-0.1)">' + paths + '</g>' +
               '<clipPath id="phClip"><use href="#phLand"/></clipPath>' +
             '</defs>' +
             '<use href="#phLand" fill="url(#phGrad)"/>' +
             '<rect x="0" y="0" width="1024" height="1024" fill="url(#phDots)" clip-path="url(#phClip)"/>' +
             '<rect x="0" y="0" width="1024" height="1024" fill="url(#phSheen)" clip-path="url(#phClip)"/>' +
+            glow +
             '<use href="#phLand" fill="none" stroke="#86e06a" stroke-width="2.5" opacity="0.55"/>' +
+            links +
           '</svg>';
         mount.insertBefore(wrap.firstElementChild, mount.firstChild);
       }
@@ -300,7 +309,7 @@
         btn.setAttribute('aria-label', c.name + ': ' + c.metric + ' ' + c.metricLabel);
         var d = (c.r || 10) * 2;
         btn.innerHTML = '<span class="blip" style="width:' + d + 'px;height:' + d + 'px"></span>' +
-                        (c.lead ? '<span class="cn-name">Taguig pilot</span>' : '');
+                        (c.lead ? '<span class="cn-name">Taguig · ' + c.metric + '</span>' : '');
         function show() {
           var below = c.y < 38;
           pop.innerHTML = '<h4>' + c.name + (c.kind === 'vision' ? ' <span class="pill gray">vision</span>' : ' <span class="pill green">verified</span>') + '</h4>' +
