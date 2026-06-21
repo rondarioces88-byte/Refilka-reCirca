@@ -22,8 +22,10 @@ Plain HTML + CSS + vanilla JS. No build step, no frameworks. Fonts: **Sora** + *
 
 - `styles.css` — design system (brand tokens, components, responsive).
 - `data.js` — **canonical data layer** (the only place numbers live).
+- `phmap.js` — inline Philippines silhouette paths (mapsicon, MIT) for the animated SVG map.
 - `app.js` — behaviours: count-up, scroll reveals, scenario toggle, impact calculator, live ticker,
-  and the interactive national + Metro Manila impact maps.
+  the interactive **animated SVG** national + Metro Manila impact maps, and a crafted SVG icon set
+  (emoji are replaced at runtime with consistent monochrome line icons).
 
 ## Live numbers & the future database
 The site shows **verified pilot actuals** (e.g. 28,821 sachets avoided, as of May 2026) plus a

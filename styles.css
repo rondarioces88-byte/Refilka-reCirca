@@ -432,11 +432,10 @@ sup.cite { color:var(--green-soft); font-weight:700; font-size:.7em; cursor:help
 /* National locator (interactive) */
 .nat-fig { position:relative; padding:18px; text-align:center; flex:1;
   background:radial-gradient(120% 90% at 50% 0%, var(--green-l), #fff 70%); border-radius:0 0 var(--radius) var(--radius); }
-.nat-img { position:relative; display:inline-block; width:100%; max-width:380px; margin:0 auto; }
-.nat-img img { width:100%; display:block; filter:saturate(0); opacity:.6; }
-/* mask the in-image corner watermark subtly */
-.nat-img::after { content:""; position:absolute; right:0; bottom:0; width:34%; height:6%;
-  background:linear-gradient(90deg,transparent,#fff 70%); pointer-events:none; }
+.nat-img { position:relative; display:block; width:100%; max-width:440px; margin:0 auto; }
+.ph-svg { width:100%; height:auto; display:block; overflow:visible;
+  filter:drop-shadow(0 14px 28px rgba(15,59,39,.30)); }
+.ph-svg #phLand, .ph-svg use { transition:fill .3s; }
 @keyframes ping { 0%{transform:scale(1); opacity:.7;} 75%,100%{transform:scale(3.2); opacity:0;} }
 .ncr-marker { position:absolute; width:18px; height:18px; transform:translate(-50%,-50%); }
 .ncr-marker::before { content:""; position:absolute; inset:0; border-radius:50%; background:var(--green);
@@ -496,6 +495,15 @@ sup.cite { color:var(--green-soft); font-weight:700; font-size:.7em; cursor:help
 .map-legend .lg i { width:11px; height:11px; border-radius:50%; }
 .map-foot { padding:0 22px 20px; font-size:.78rem; color:var(--light); }
 .map-foot b { color:var(--green-soft); font-family:'Lora',serif; }
+
+/* ============================================================ Crafted SVG icons */
+.ic-svg { width:1.15em; height:1.15em; display:inline-block; vertical-align:-.16em;
+  stroke:currentColor; color:var(--green-deep); flex-shrink:0; }
+.card .ic .ic-svg { color:var(--green-deep); }
+.nav-card .nic .ic-svg { color:var(--c); width:1em; height:1em; }
+.value-list .v .vic .ic-svg, .ig .ic-svg { color:var(--green-deep); }
+.circa-card .leaf .ic-svg { color:#bfe6a8; }
+.hero .tag .ic-svg { color:#bfe0cb; width:1em; height:1em; }
 
 /* ============================================================ Responsive */
 @media (max-width:960px){

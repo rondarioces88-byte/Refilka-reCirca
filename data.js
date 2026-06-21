@@ -81,28 +81,25 @@ window.REFILLKA = (function () {
       metric: 'Network', metricLabel: 'Metro Manila network city',
       sub: 'Part of refillka’s 2,495-store network across 14 cities (confirmed early 2026)' }
   ];
-  // NCR marker position on the national PH_Map.png (percent)
-  var ncrOnNationalMap = { x: 45.5, y: 48 };
-
-  /* ---- NATIONAL PH MAP markers (percent positions on PH_Map.png) ----
+  /* ---- NATIONAL PH MAP markers (percent positions over the inline PH SVG) ----
      Only the Taguig/NCR marker carries VERIFIED impact. The "vision"
      markers represent network reach (2,495 stores across 14 cities) and
      the 2030 "RefillKa Everywhere" goal — illustrative, not city-level
      claims. Rendered faint + clearly labelled. ---- */
   var phMarkers = [
-    { name: 'Metro Manila · Taguig', kind: 'pilot', statusClass: 'green', lead: true, x: 45.5, y: 48, r: 13,
+    { name: 'Metro Manila · Taguig', kind: 'pilot', statusClass: 'green', lead: true, x: 43, y: 37, r: 14,
       metric: '28,821', metricLabel: 'sachets avoided (verified)',
       sub: 'Monitored Field Study city · 15 live stores · 4 barangays' },
-    { name: 'Northern Luzon', kind: 'vision', statusClass: 'green', x: 43, y: 20, r: 7,
+    { name: 'Northern Luzon', kind: 'vision', statusClass: 'green', x: 46, y: 11, r: 7,
       metric: '2030', metricLabel: 'RefillKa Everywhere vision',
       sub: 'Part of 2,495 store partners across 14 cities (illustrative reach)' },
-    { name: 'Palawan', kind: 'vision', statusClass: 'green', x: 30, y: 61, r: 6,
+    { name: 'Palawan', kind: 'vision', statusClass: 'green', x: 30, y: 66, r: 6,
       metric: '2030', metricLabel: 'national rollout vision',
       sub: 'Illustrative reach toward the 1 Billion Challenge by 2030' },
-    { name: 'Visayas', kind: 'vision', statusClass: 'green', x: 56, y: 67, r: 7,
+    { name: 'Visayas', kind: 'vision', statusClass: 'green', x: 58, y: 55, r: 7,
       metric: '2030', metricLabel: 'RefillKa Everywhere vision',
       sub: 'Part of 2,495 store partners across 14 cities (illustrative reach)' },
-    { name: 'Mindanao', kind: 'vision', statusClass: 'green', x: 64, y: 83, r: 7,
+    { name: 'Mindanao', kind: 'vision', statusClass: 'green', x: 66, y: 82, r: 7,
       metric: '2030', metricLabel: 'national rollout vision',
       sub: 'Illustrative reach toward the 1 Billion Challenge by 2030' }
   ];
@@ -149,7 +146,7 @@ window.REFILLKA = (function () {
 
   return {
     actuals: actuals, projection: projection, goal: goal, goalYear: goalYear,
-    network: network, cities: cities, ncrOnNationalMap: ncrOnNationalMap, phMarkers: phMarkers, sdgs: sdgs,
+    network: network, cities: cities, phMarkers: phMarkers, sdgs: sdgs,
     DAILY_RATE: DAILY_RATE, getLiveImpact: getLiveImpact
   };
 })();
